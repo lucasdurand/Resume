@@ -101,6 +101,10 @@
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> e8cd194a05e1bc0ed59e7bec310176e429fc204b
 %----------------------------------------------------------------------------------------
 %	 MISC CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -201,6 +205,15 @@
               \end{array}
               $} 
             & \cvnumberphone\\}
+<<<<<<< HEAD
+      \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
+            {$
+              \begin{array}{l}
+              {\href{\cvsite}{\includegraphics[scale=0.05]{img/globe-512.png}}}
+              \end{array}
+              $} 
+            & \cvsite\\}
+=======
  %     \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
   %          {$
    %           \begin{array}{l}
@@ -208,6 +221,7 @@
      %         \end{array}
       %        $} 
        %     & \cvsite\\}
+>>>>>>> e8cd194a05e1bc0ed59e7bec310176e429fc204b
       \ifthenelse{\equal{\cvmail}{}}{}{
             {$
               \begin{array}{l}
@@ -218,18 +232,31 @@
     \end{tabular}
 
     %------------------------------------------------
+<<<<<<< HEAD
+        \vspace{1.5mm}
+        \profilesection{Skills}{3.8cm}
+=======
         \vspace{3mm}
         \profilesection{Skills}{4cm}
+>>>>>>> e8cd194a05e1bc0ed59e7bec310176e429fc204b
 
     	\skills
         
         %------------------------------------------------
+<<<<<<< HEAD
+       \vspace{1.5mm}
+=======
         \vspace{3mm}
+>>>>>>> e8cd194a05e1bc0ed59e7bec310176e429fc204b
         \profilesection{Interests}{3cm} 
         
         \interests
         
+<<<<<<< HEAD
+        \vspace{1.5mm}
+=======
         \vspace{3mm}
+>>>>>>> e8cd194a05e1bc0ed59e7bec310176e429fc204b
         \profilesection{Languages}{2.4cm} 
 
 	%	\languages
