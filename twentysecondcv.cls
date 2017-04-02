@@ -227,20 +227,16 @@
     %------------------------------------------------
         \vspace{1.5mm}
         \profilesection{Skills}{3.8cm}
-        \vspace{3mm}
-        \profilesection{Skills}{4cm}
 
     	\skills
         
         %------------------------------------------------
        \vspace{1.5mm}
-        \vspace{3mm}
         \profilesection{Interests}{3cm} 
         
         \interests
         
         \vspace{1.5mm}
-        \vspace{3mm}
         \profilesection{Languages}{2.4cm} 
 
 	%	\languages
