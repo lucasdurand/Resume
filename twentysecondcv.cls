@@ -53,7 +53,18 @@
 %----------------------------------------------------------------------------------------
 %	 COLOURS
 %----------------------------------------------------------------------------------------
+%TD Colours
 
+%pale
+\definecolor{tdorange}{HTML}{e8b400}
+\definecolor{tdgreen}{HTML}{8CC63F}
+\definecolor{tdblue}{HTML}{619abc}
+\definecolor{tdgray}{HTML}{808083}
+%bold
+\definecolor{tddarkgreen}{HTML}{163d22}
+\definecolor{tdboldgreen}{HTML}{00b624}
+
+% template colours
 \definecolor{white}{RGB}{255,255,255}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{sidecolor}{HTML}{E7E7E7}
@@ -183,7 +194,7 @@
 
     %------------------------------------------------
     
-        \vspace{5mm}
+        \vspace{2.5mm}
     \renewcommand{\arraystretch}{1.6}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
         
@@ -225,22 +236,22 @@
     \end{tabular}
 
     %------------------------------------------------
-        \vspace{1.5mm}
-        \profilesection{Skills}{3.8cm}
+%        \vspace{1.5mm}
+        \profilesection{Skills}{3cm}
 
     	\skills
         
         %------------------------------------------------
-       \vspace{1.5mm}
+%       \vspace{1.5mm}
         \profilesection{Interests}{3cm} 
         
         \interests
         
-        \vspace{1.5mm}
+ %       \vspace{1.5mm}
         \profilesection{Languages}{2.4cm} 
 
 	%	\languages
-	\wheelchart{40/green/Python,  20/materialpurple/HTML5,  10/materialamber/JavaScript, 2.5/purple/Spanish, 2.5/red/French, 20/blue/SQL,5/yellow/C++}
+	\wheelchart{40/green/Python,  20/materialpurple/HTML5, 5/materialindigo/CSS,  10/materialamber/JavaScript, 2.5/purple/Spanish, 2.5/red/French, 20/blue/SQL,5/yellow/C++}
 %        {$
 %              \begin{array}{l}
 %              \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}
@@ -346,9 +357,11 @@
     % sets the distance from the text to the border of the bubble center node
     distance text center bubble = 0.5cm,
     % set center bubble color
-    bubble center node color = pblue,
+%    bubble center node color = pblue,
+bubble center node color = tdgray,
     % define the list of colors usable in the diagram
-    set color list = {lightgray, materialcyan, orange, materialgreen, materialorange, materialteal, materialamber, materialindigo, materiallime, blue},
+    %set color list = {lightgray, materialcyan, orange, materialgreen, materialorange, materialteal, materialamber, materialindigo, materiallime, blue},
+    set color list = {tdorange, tdgreen, tdblue,  tddarkgreen, materialamber, tdboldgreen, materialcyan, materialgreen, materialorange},
     % sets the opacity at which the bubbles are shown
     bubble fill opacity = 0.6,
     % sets the opacity at which the bubble text is shown
