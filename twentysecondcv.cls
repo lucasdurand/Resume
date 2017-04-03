@@ -194,7 +194,7 @@
 
     %------------------------------------------------
     
-        \vspace{2.5mm}
+        \vspace{3.5mm}
     \renewcommand{\arraystretch}{1.6}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
         
@@ -236,18 +236,18 @@
     \end{tabular}
 
     %------------------------------------------------
-%        \vspace{1.5mm}
+        \vspace{1.5mm}
         \profilesection{Skills}{3cm}
 
     	\skills
         
         %------------------------------------------------
-%       \vspace{1.5mm}
+       \vspace{1.5mm}
         \profilesection{Interests}{3cm} 
         
         \interests
         
- %       \vspace{1.5mm}
+       \vspace{1.5mm}
         \profilesection{Languages}{2.4cm} 
 
 	%	\languages
