@@ -170,6 +170,62 @@
 	}
 }
 
+%Stuff for Languages Pie/Donut chart
+% Adjusts the size of the wheel:
+\def\innerradius{1.0cm}
+\def\outerradius{2.2cm}
+
+% The main macro
+\newcommand{\wheelchart}[1]{
+	\renewcommand{\wheelchart}{
+    % Calculate total
+    \pgfmathsetmacro{\totalnum}{0}
+    \foreach \value/\colour/\name in {#1} {
+        \pgfmathparse{\value+\totalnum}
+        \global\let\totalnum=\pgfmathresult
+    }
+    \begin{tikzpicture}
+
+      % Calculate the thickness and the middle line of the wheel
+      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
+      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
+
+      % Rotate so we start from the top
+      \begin{scope}[rotate=90]
+
+      % Loop through each value set. \cumnum keeps track of where we are in the wheel
+      \pgfmathsetmacro{\cumnum}{0}
+      \foreach \value/\colour/\name in {#1} {
+            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
+
+            % Calculate the percent value
+            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
+            % Calculate the mid angle of the colour segments to place the labels
+            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
+
+            % This is necessary for the labels to align nicely
+            \pgfmathparse{
+               (-\midangle<180?"west":"east")
+            } \edef\textanchor{\pgfmathresult}
+            \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle>180)}
+
+            % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
+            \fill[\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
+            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
+
+            % Draw the data labels
+            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
+
+
+            % Set the old cumulated angle to the new value
+            \global\let\cumnum=\newcumnum
+        }
+
+      \end{scope}
+%      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
+    \end{tikzpicture}
+}
+}
 %----------------------------------------------------------------------------------------
 %  SIDEBAR LAYOUT
 %----------------------------------------------------------------------------------------
@@ -251,7 +307,7 @@
         \profilesection{Languages}{2.4cm} 
 
 	%	\languages
-	\wheelchart{40/green/Python,  20/materialpurple/HTML5, 5/materialindigo/CSS,  10/materialamber/JavaScript, 2.5/purple/Spanish, 2.5/red/French, 20/blue/SQL,5/yellow/C++}
+	\wheelchart
 %        {$
 %              \begin{array}{l}
 %              \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}

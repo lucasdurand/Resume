@@ -31,68 +31,17 @@
         \textbf{Proofs of}\\\textbf{Concept},
    		\textbf{Business}\\\textbf{Intuition},
    		\textbf{Capital}\\\textbf{Markets},
-   		\textbf{Full Stack}\\\textbf{Dev},
+   		\textbf{Agile}\\\textbf{Full Stack}\\\textbf{Dev},
    		\textbf{Quantitative}\\\textbf{Research},
    		\textbf{Teaching}
     }
 }
 
+%Interests
 \interests{{Machine Learning/0.5},{Financial Engineering/2},{Quantitative Modelling/5.5},{Data Visualisation/3},{Big Data/2.5}}
 
-% Adjusts the size of the wheel:
-\def\innerradius{1.0cm}
-\def\outerradius{2.2cm}
-
-% The main macro
-\newcommand{\wheelchart}[1]{
-    % Calculate total
-    \pgfmathsetmacro{\totalnum}{0}
-    \foreach \value/\colour/\name in {#1} {
-        \pgfmathparse{\value+\totalnum}
-        \global\let\totalnum=\pgfmathresult
-    }
-
-    \begin{tikzpicture}
-
-      % Calculate the thickness and the middle line of the wheel
-      \pgfmathsetmacro{\wheelwidth}{\outerradius-\innerradius}
-      \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
-
-      % Rotate so we start from the top
-      \begin{scope}[rotate=90]
-
-      % Loop through each value set. \cumnum keeps track of where we are in the wheel
-      \pgfmathsetmacro{\cumnum}{0}
-      \foreach \value/\colour/\name in {#1} {
-            \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
-
-            % Calculate the percent value
-            \pgfmathsetmacro{\percentage}{\value/\totalnum*100}
-            % Calculate the mid angle of the colour segments to place the labels
-            \pgfmathsetmacro{\midangle}{-(\cumnum+\newcumnum)/2}
-
-            % This is necessary for the labels to align nicely
-            \pgfmathparse{
-               (-\midangle<180?"west":"east")
-            } \edef\textanchor{\pgfmathresult}
-            \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle>180)}
-
-            % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
-            \fill[\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
-            (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
-
-            % Draw the data labels
-            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
-
-
-            % Set the old cumulated angle to the new value
-            \global\let\cumnum=\newcumnum
-        }
-
-      \end{scope}
-%      \draw[gray] (0,0) circle (\outerradius) circle (\innerradius);
-    \end{tikzpicture}
-}
+%Languages
+\wheelchart{40/green/Python,  15/materialpurple/HTML5, 5/materialindigo/CSS,  20/materialamber/JavaScript, 2.5/purple/Spanish, 2.5/red/French, 15/blue/SQL,5/yellow/C++}
 
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
@@ -148,7 +97,7 @@
         {\emph{inSIDious Matter}}
         {
         {\begin{itemize}
-        \item Phenomenological exploration of a model for an inelastic self-interacting dark matter particle
+        \item Phenomenological exploration of a model for an inelastic self-interacting dark matter particle with \textbf{Mathematica} and \textbf{Scipy}
         \item Theoretical formulation of scattering quantities by tensor calculus and numerical partial-wave analysis to determine valid parameter-space for theory.
        	\item New efficient techniques for numerically determining scattering cross-sections in the classical regime are implemented.
     \end{itemize}}
