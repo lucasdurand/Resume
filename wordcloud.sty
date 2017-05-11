@@ -1,0 +1,55 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+
+\ProvidesPackage{wordcloud}
+
+\RequirePackage{mathpazo}
+
+\RequirePackage{etoolbox}
+
+\newcount\wcmaxfreq
+
+\newdimen\wcsmall
+
+\newdimen\wcscale
+
+\newcommand\wordclouding[3]{%
+        \begingroup
+                \wcsmall#1
+                \wcmaxfreq0
+                \def\wordlist{}%
+                \def\temp{ }%
+                \edef\temp{\noexpand\parsewords#3\temp\relax\temp}%
+                \temp
+                \wcscale \dimexpr (#2 - \wcsmall)/(\wcmaxfreq - 1)\relax
+                \forlistloop\printword\wordlist
+        \endgroup
+}
+
+\long\def\parsewords#1 {%
+        \ifx\relax#1
+        \else\ifx\par#1
+        \else
+                \ifcsdef{wc@#1}{%
+                        \count255 \numexpr \csuse{wc@#1} + 1 \relax
+                        \csedef{wc@#1}{\numexpr \csname wc@#1\endcsname + 1\relax}
+                }{%
+                        \count255 1
+                        \csdef{wc@#1}{1}
+                        \listadd\wordlist{#1}%
+                }%
+                \csedef{wc@#1}{\the\count255 }%
+                \ifnum\count255>\wcmaxfreq
+                        \wcmaxfreq\count255
+                \fi
+                \expandafter\expandafter\expandafter\parsewords
+        \fi\fi
+}
+
+\def\printword#1{%
+        \count255 \numexpr \csuse{wc@#1} - 1 \relax
+        \dimen0 \dimexpr \the\count255 \wcscale + \wcsmall \relax
+        \fontsize{\dimen0}{1.2\dimen0}\selectfont #1 %\mbox{#1} % intentional space
+}
+
+
+\endinput

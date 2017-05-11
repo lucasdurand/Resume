@@ -1,0 +1,165 @@
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+\usepackage{pst-node}   
+\usepackage{wordcloud}
+\usepackage{datapie}
+% Command for printing skill progress bars
+\newcommand\skills{ 
+~	
+	\smartdiagram[bubble diagram]{
+        \textbf{Quant,}\\\textbf{Data Scientist,}\\\textbf{Developer},
+        \textbf{Statistical}\\\textbf{Analysis},  
+        \textbf{Proofs of}\\\textbf{Concept},
+   		\textbf{Business}\\\textbf{Intuition},
+   		\textbf{Capital}\\\textbf{Markets},
+   		\textbf{Agile}\\\textbf{Full Stack}\\\textbf{Dev},
+   		\textbf{Quantitative}\\\textbf{Research},
+   		\textbf{Teaching}
+    }
+}
+
+\newcommand\venn{
+\begin{pspicture}(-3,-2.2)(3,2.2)
+%\begin{pspicture}(-3,-2)(3,1.8)
+%main labels
+  \def\R{1}
+  \def\RR{2}
+  \def\Rup{2.55}
+  \def\Rdn{1.4}
+  \pnode(\R;30){A} \rput(\RR;30){ {Quant}}
+  \pnode(\R;150){B}\rput(\Rup;150){Data} \rput(\RR;150){Scientist}
+  \pnode(\R;270){C}\rput(\RR;270){Developer}
+
+%intersections
+  \def\d{1.5}
+  \renewcommand{\arraystretch}{0.4}
+	\rput(\d;90){\begin{tabular}[t]{@{}c@{}}\scriptsize Interactive \\ \scriptsize Visualizations\end{tabular}} %{$A \cap B$}
+ 	\rput(\d;210){\begin{tabular}[t]{@{}l@{}}\scriptsize Machine \\ \scriptsize \enskip Learning\end{tabular}}	%{$B \cap C$}
+	\rput(\d;-30){\begin{tabular}[t]{@{}l@{}}\scriptsize \enskip Monte \\ \scriptsize Carlo \end{tabular}}	%{$A \cap C$}  
+	\rput(0,0){\begin{tabular}[t]{@{}c@{}}\scriptsize Distributed \\ \scriptsize Computing\end{tabular}}	%{$A\cap B\cap C$}
+%circles
+
+  \psset{opacity=0.3}
+  \def\r{2}
+  \pscircle*[linecolor=nured](A){\r} 
+  \pscircle*[linecolor=nugreen](B){\r} 
+  \pscircle*[linecolor=nublue](C){\r}
+
+\end{pspicture}
+}
+
+
+%Languages
+\wheelchart{40/nugreen/Python,  15/materialpurple/HTML5, 5/materialindigo/CSS,  20/materialamber/JavaScript, 2.5/purple/Spanish, 2.5/nured/French, 15/nublue/SQL,5/yellow/C++}
+
+%Interests
+\interests{{Machine Learning/2},{Quantitative Modelling/5.5},{Data Visualisation/4},{Big Data/2.5}}
+
+\newcommand\wordcloud{\wordclouding{8pt}{14pt}{Statistical Statistical Analysis Statistical Analysis Analysis  Proofs of Concept Business Intuition Business Intuition Quantitative Research Quantitative Research Quantitative Research Teaching Monte Carlo Monte Carlo Angular.js Hadoop Pandas Pandas Pandas Pandas Matplotlib Seaborn Lattice Tree Lattice Tree Stochastic Calculus }}
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\cvname{Lucas Durand} % Your name
+\cvjobtitle{ Technology Solutions \\ Associate} % Job title/career
+
+\cvlinkedin{https://linkedin.com/in/lucasdurand}
+\cvnumberphone{+1 416 884 1123} % Phone number
+%\cvsite{} % Personal website
+\cvsite{github.com/lucasdurand} % Personal website
+\cvmail{lucas.durand@gmail.com} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+    	{2014 - 2016}
+        {MSc., Theoretical Physics}
+        {\href{http://www.yorku.ca/}{York University, Perimeter Institute (PI)}}
+        {Toronto/Waterloo, Ontario, Canada}
+        {}
+	\twentyitem
+    	{2009 - 2014}
+        {BSc., Physics \& Philosophy}
+        {\href{https://www.utoronto.ca/}{Trinity College, University of Toronto}}
+        {Toronto, Ontario, Canada}
+        {Senior Thesis -- Graphene: Hartree-Fock Analytics and Numerics}
+	%\twentyitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
+\end{twenty}
+
+
+\section{Research}
+\begin{twenty}
+	\twentyitem
+    	{2014 - 2016}
+        {Major Research Project}
+        {\href{http://www.yorku.ca/stulin/research.html}{Tulin Research Group}}
+        {\emph{inSIDious Matter}}
+        {
+        {\begin{itemize}
+        \item Phenomenological exploration of a model for an inelastic self-interacting dark matter particle with \textbf{Mathematica} and \textbf{Scipy}
+        \item Theoretical formulation of scattering quantities by tensor calculus and numerical partial-wave analysis to determine valid parameter-space for theory.
+       	\item New efficient techniques for numerically determining scattering cross-sections in the classical regime are implemented.
+    \end{itemize}}
+        }
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+    	{Feb 2017 - \\ Present}
+        {Quantitative Analyst - Associate}
+        {\href{http://www.td.com/}{TD Bank Financial Group}}
+        {Treasury Analytics Group}
+        {
+        {\begin{itemize}
+        \item Thorough benchmark and stability testing of quasi-Monte Carlo methods shows marked increase in convergence speed for mortgage-backed security valuation model, allowing for Key Rate Vega and Convexity hedging \textbf{(Pandas, Matplotlib, Seaborn, C++)}
+        \item Strengthened understanding of Financial Engineering and numerical analysis, transferring knowledge in a very successful \emph{Lunch n' Learn}, utilising \textbf{Jupyter RISE} to deliver interactive code and live animations
+    \end{itemize}}
+        }
+        
+    \twentyitem
+   		{Jul 2016 - \\
+   		Feb 2017}
+        {Business Systems Analyst - Associate}
+        {\href{http://www.td.com/}{TD Bank Financial Group}}
+        {Enterprise Fraud Analytics Program}
+        {
+        {\begin{itemize}
+        \item Subject Matter Expert (SME) for Identity \& Access Management. Developed Role-Based Access Management tools to automate RBAC reporting \textbf{(Pandas, Excel, Selenium)}
+        \item Interfaced between business and Testing Centre of Excellence to facilitate continuous testing on vendor platform delivery.
+        \item Global Knowledge training with IBM BigInsights \textbf{Hadoop} stack
+    \end{itemize}}
+        }
+        
+     \twentyitem
+   		{Apr 2014 - \\ Sep 2015}
+        {Application Analyst}
+        {\href{http://nbfm.ca/}{National Bank Financial Markets}}
+        {Equities Support}
+        {
+        \begin{itemize}
+		\item Worked on trading floor, directly interfacing with traders
+        \item Created ETL framework and \textbf{Tableau} dashboards to provide meaningful business insights from global equities trade data, leading to the adoption of Tableau Server across the LoB
+        \item Designed and implemented \textbf{angular.js} Big Data POC for legal compliance reporting. Consolidated data from legacy Sybase servers into local SQLite database to increase search speeds by 1000\% 
+        \item Explored use cases for \textbf{Bokeh, d3.js} for visualising real-time market data
+	    \end{itemize}
+    	}
+        
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+\end{document} 

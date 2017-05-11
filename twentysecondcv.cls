@@ -78,12 +78,13 @@
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
-\definecolor{green}{HTML}{C2E15F}
+\definecolor{nugreen}{HTML}{C2E15F}
 \definecolor{pblue}{HTML}{C2E15F} %redefine to green
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
+\definecolor{nured}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
+\definecolor{nublue}{HTML}{6CE0F1}
 %\definecolor{pblue}{HTML}{0395DE}
 \definecolor{materialpurple}{HTML}{9C27B0}
 \definecolor{materialindigo}{HTML}{3F51B5}
@@ -160,11 +161,13 @@
 \newcommand\interests[1]{ 
 	\renewcommand{\interests}{
 		\begin{tikzpicture}
-			\foreach [count=\i] \x/\y in {#1}{
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
+			\foreach [count=\j] \x/\y in {#1}{
+				\def\i{0.8*\j}
+				\def\width{0.6}
+				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+\width);
 				%\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\draw[fill=white,green](0,\i) rectangle (\y,\i+0.4);
-				\node [above right] at (0,\i+0.4) {\x};
+				\draw[fill=white,nugreen](0,\i) rectangle (\y,\i+\width);
+				\node [below right] at (0,\i+\width) {\x};
 			}
 		\end{tikzpicture}
 	}
@@ -292,27 +295,23 @@
     \end{tabular}
 
     %------------------------------------------------
-        \vspace{1.5mm}
-        \profilesection{Skills}{3cm}
+%        \vspace{1.5mm}
+        \profilesection{Roles}{4.5cm}
 
-    	\skills
-        
-        %------------------------------------------------
-       \vspace{1.5mm}
+		\venn
+
+		\profilesection{Skills}{4.5cm}
+
+        \wordcloud
+
         \profilesection{Interests}{3cm} 
-        
-        \interests
-        
-       \vspace{1.5mm}
-        \profilesection{Languages}{2.4cm} 
 
-	%	\languages
+        \interests
+
+        \profilesection{Languages}{2.5cm} 
+
 	\wheelchart
-%        {$
-%              \begin{array}{l}
-%              \hspace{-2mm}{\includegraphics[scale=0.45]{img/languages_muted.png}}
-%              \end{array}
-%        $}   
+
   \end{textblock}
 }
 
