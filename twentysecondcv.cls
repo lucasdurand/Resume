@@ -163,10 +163,11 @@
 		\begin{tikzpicture}
 			\foreach [count=\j] \x/\y in {#1}{
 				\def\i{0.8*\j}
-				\def\width{0.6}
-				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+\width);
+				\def\width{0.5}
+				\fill[fill = maingray, opacity= 0.4 ] (0,\i) rectangle (6,\i+\width);
+				%\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+\width);
 				%\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\draw[fill=white,nugreen](0,\i) rectangle (\y,\i+\width);
+				\fill[fill=nugreen](0,\i) rectangle (\y,\i+\width);
 				\node [below right] at (0,\i+\width) {\x};
 			}
 		\end{tikzpicture}
@@ -304,11 +305,11 @@
 
         \wordcloud
 
-        \profilesection{Interests}{3cm} 
+        \profilesection{Interests}{3.2cm} 
 
         \interests
 
-        \profilesection{Languages}{2.5cm} 
+        \profilesection{Languages}{2.7cm} 
 
 	\wheelchart
 

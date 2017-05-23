@@ -2,7 +2,8 @@
 \usepackage{pst-node}   
 \usepackage{wordcloud}
 \usepackage{datapie}
-% Command for printing skill progress bars
+
+%not currently being used ....
 \newcommand\skills{ 
 ~	
 	\smartdiagram[bubble diagram]{
@@ -54,7 +55,7 @@
 %Interests
 \interests{{Machine Learning/2},{Quantitative Modelling/5.5},{Data Visualisation/4},{Big Data/2.5}}
 
-\newcommand\wordcloud{\wordclouding{8pt}{15pt}{Statistical Statistical Analysis Statistical Analysis Analysis  Business Acumen Spark MLLib Spark MLLib Hadoop Quantitative Research Quantitative Research Quantitative Research Teaching Monte Carlo Monte Carlo Angular.js Hadoop Pandas Pandas Pandas Pandas Lattice Tree Lattice Tree POCs POCs POCs Stochastic Calculus Capital Markets Capital Markets Predictive Models}}
+\newcommand\wordcloud{\wordclouding{8pt}{15pt}{Statistical Statistical Analysis Statistical Analysis Analysis  Business Acumen Spark MLLib Spark MLLib Hadoop Quantitative Research Quantitative Research Quantitative Research Teaching Monte Carlo Monte Carlo Angular.js Hadoop Pandas Pandas Pandas Pandas Multinomial Tree Multinomial Tree POCs POCs POCs Stochastic Calculus Capital Markets Capital Markets Predictive Models}}
 %----------------------------------------------------------------------------------------
 %	 PERSONAL INFORMATION
 %----------------------------------------------------------------------------------------
@@ -74,6 +75,7 @@
 
 \makeprofile % Print the sidebar
 
+\newcommand{\skill}[1]{\texttt{\textbf{#1}}}
 %----------------------------------------------------------------------------------------
 %	 EDUCATION
 %----------------------------------------------------------------------------------------
@@ -85,7 +87,7 @@
         {MSc., Theoretical Physics}
         {\href{http://www.yorku.ca/}{York University, Perimeter Institute (PI)}}
         {Toronto/Waterloo, Ontario, Canada}
-        {}
+        {TA: Engineering/Physics Lab; Science, Technology \& the Environment}
 	\twentyitem
     	{2009 - 2014}
         {BSc., Physics \& Philosophy}
@@ -105,7 +107,7 @@
         {\emph{inSIDious Matter}}
         {
         {\begin{itemize}
-        \item Phenomenological exploration of a model for an inelastic self-interacting dark matter particle with \textbf{Mathematica} and \textbf{Scipy}
+        \item Phenomenological exploration of a model for an inelastic self-interacting dark matter particle with \skill{Mathematica} and \skill{Scipy}
         \item Theoretical formulation of scattering quantities by tensor calculus and numerical partial-wave analysis to determine valid parameter-space for theory.
        	\item New efficient techniques for numerically determining scattering cross-sections in the classical regime are implemented.
     \end{itemize}}
@@ -119,18 +121,48 @@
 \section{Experience}
 
 \begin{twenty} % Environment for a list with descriptions
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+
 	\twentyitem
-    	{Feb 2017 - \\ Present}
-        {Quantitative Analyst - Associate}
-        {\href{http://www.td.com/}{TD Bank Financial Group}}
+    	{Feb 2017 - \\ Aug 2017}
+        {Quantitative Developer - Associate}
+        {\href{http://www.td.com/}{TD Securities}}
         {Treasury Analytics Group}
         {
         {\begin{itemize}
-        \item Thorough benchmark and stability testing of quasi-Monte Carlo methods shows marked increase in convergence speed for mortgage-backed security valuation model, allowing for Key Rate Vega and Convexity hedging \textbf{(Pandas, Matplotlib, Seaborn, C++)}
-        \item Strengthened understanding of Financial Engineering and numerical analysis, transferring knowledge in a very successful \emph{Lunch n' Learn}, utilising \textbf{Jupyter RISE} to deliver interactive code and live animations
+        \item Thorough benchmark and stability testing of quasi-Monte Carlo methods shows marked increase in convergence speed for mortgage-backed security valuation model, allowing for Key Rate Vega and Convexity hedging \skill{(Pandas, Matplotlib, Seaborn, C++)}
+        \item Strengthened understanding of Financial Engineering and numerical analysis, distilling and transferring knowledge to laymen in a very successful \emph{Lunch n' Learn}, utilising \skill{Jupyter RISE} to deliver interactive code and live animations
+        \item Courses Completed: 
+        \begin{itemize}
+        	\item Udemy - Data Science and Machine Learning with Python
+        	\item Udemy - Taming Big Data with Apache Spark and Python
+        \end{itemize}
     \end{itemize}}
         }
         
+
+	\twentyitem
+    	{Aug 2017 - \\ Feb 2018}
+        {Quantitative Developer - Associate}
+        {\href{http://www.td.com/}{TD Securities}}
+        {Quantitative Modelling \& Analytics Group}
+        {
+        {\begin{itemize}
+        \item Responsible for development and implementation of sophisticated derivatives pricing and risk models
+        \item Work with Quant team to add new modelling (fixed income and credit derivatives) capabilities to Unified Quant Library \skill{(C++)} for 
+    \end{itemize}}
+        }
+\end{twenty}
+
+
+% SSECCONNND PAAAG
+\newpage
+\newgeometry{left=1cm,top=1cm,right=1cm,bottom=0.2cm,nohead,nofoot}
+
+
+\section{Experience cont'd}
+
+\begin{twenty} % Environment for a list with descriptions
     \twentyitem
    		{Jul 2016 - \\
    		Feb 2017}
@@ -139,27 +171,60 @@
         {Enterprise Fraud Analytics Program}
         {
         {\begin{itemize}
-        \item Subject Matter Expert (SME) for Identity \& Access Management. Developed Role-Based Access Management tools to automate RBAC reporting \textbf{(Pandas, Excel, Selenium)}
+        \item Subject Matter Expert (SME) for Identity \& Access Management. Developed Role-Based Access Management tools to automate RBAC reporting \skill{(Pandas, Excel, Selenium)}
         \item Interfaced between business and Testing Centre of Excellence to facilitate continuous testing on vendor platform delivery.
-        \item Global Knowledge training with IBM BigInsights \textbf{Hadoop} stack
+        \item Completed Courses: 
+        	\begin{itemize}
+        	\item Global Knowledge - IBM BigInsights Foundation with \skill{Hadoop}
+    	    \item Coursera (Columbia University) - Financial Engineering and Risk Management Part I
+	        \end{itemize}
     \end{itemize}}
-        }
-        
+        }        
+
      \twentyitem
-   		{Apr 2014 - \\ Sep 2015}
-        {Application Analyst}
-        {\href{http://nbfm.ca/}{National Bank Financial Markets}}
-        {Equities Support}
+   		{Sep 2014 - \\ Apr 2016}
+        {Teaching \& Research Assistant}
+        {\href{http://www.yorku.ca/}{York University, Tulin Research Group}}
+        {}
         {
         \begin{itemize}
-		\item Worked on trading floor, directly interfacing with traders
-        \item Created ETL framework and \textbf{Tableau} dashboards to provide meaningful business insights from global equities trade data, leading to the adoption of Tableau Server across the LoB
-        \item Designed and implemented \textbf{angular.js} Big Data POC for legal compliance reporting. Consolidated data from legacy Sybase servers into local SQLite database to increase search speeds by 1000\% 
-        \item Explored use cases for \textbf{Bokeh, d3.js} for visualising real-time market data
+        \item Maintained a broad knowledge of general science to lead tutorials in \emph{Science, Technology \& the Environment} as well as  weekly topics relevant to \emph{Engineering/Physics Labs}.
+        \item Worked to promote a holistic understanding of difficult concepts through the use of qualitative, quantitative, analytic and synthetic thinking while efficiently assessing a high volume of student problem sets and assignments.
+	    \end{itemize}
+    	}
+
+
+     \twentyitem
+   		{Apr 2014 - \\ Sep 2015}
+        {Application Analyst - Intern}
+        {\href{http://nbfm.ca/}{National Bank Financial Markets}}
+        {Equities Trade Support}
+        {
+        \begin{itemize}
+		\item Worked on NBFM trading floor, directly interfacing with institutional equities, direct market access, and discount brokerage traders
+        \item Created ETL framework and \skill{Tableau} dashboards to provide meaningful business insights from global equities trade data, leading to the adoption of Tableau Server across the LoB
+        \item Designed and implemented \skill{angular.js} Big Data POC for legal compliance reporting. Consolidated data from legacy Sybase servers into local SQLite database to increase search speeds by 1000\% 
+        \item Explored use cases for \skill{Bokeh, d3.js} for visualising real-time market data
 	    \end{itemize}
     	}
         
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
+
+\section{Volunteering}
+\begin{twentyshort}
+\twentyitemshort
+		{Annually}
+		{\textbf{Benefit Concerts} \\ March of Dimes, ABC for SickKids, AIDSbeat, Big Brothers Big Sisters of York, Rock for LIFE, AUSUM Charity for Autism}
+\twentyitemshort
+   		{2014 - \\ Present}
+        {\textbf{UofT Physics Department} \\ Mentor}
+\twentyitemshort
+   		{Jul 2014 - \\ Present}
+        {\textbf{TD Associate Knowledge Academy} \\ \emph{Lunch n' Learn} Presenter, Group Learning Coordinator, Associate Fireside Chat Creator}
+\twentyitemshort
+   		{}
+        {\textbf{TD Co-op Mentorship Committee} \\ Executive, Mentor}
+\end{twentyshort}
 \end{document} 
