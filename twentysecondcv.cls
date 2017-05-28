@@ -218,7 +218,7 @@
             (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
 
             % Draw the data labels
-            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.5cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
+            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 0.2ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 0.2ex) [xshift=\labelshiftdir*0.125cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
 
 
             % Set the old cumulated angle to the new value
