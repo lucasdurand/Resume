@@ -67,20 +67,21 @@
 % template colours
 \definecolor{white}{RGB}{255,255,255}
 \definecolor{gray}{HTML}{4D4D4D}
-\definecolor{sidecolor}{HTML}{E7E7E7}
-%\definecolor{sidecolor}{HTML}{b9a37a}
-
+%\definecolor{sidecolor}{HTML}{E7E7E7}
+\definecolor{sidecolor}{HTML}{FFFFFF}
 
 \definecolor{mainblue}{HTML}{0E5484}
 \definecolor{maingray}{HTML}{B9B9B9}
 
-\definecolor{pblue}{HTML}{0395DE}
+%\definecolor{pblue}{HTML}{0395DE}
+
+%use grayscale colouring
+\definecolor{pblue}{HTML}{808083}
 
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
 \definecolor{nugreen}{HTML}{C2E15F}
-\definecolor{pblue}{HTML}{C2E15F} %redefine to green
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{nured}{HTML}{FB4485}
@@ -112,7 +113,7 @@
   \colorlet{header}{gray}
 \fi
 \colorlet{textcolor}{gray}
-\colorlet{headercolor}{gray}
+\colorlet{headercolor}{lightgray}
 
 %----------------------------------------------------------------------------------------
 %	 MISC CONFIGURATIONS
@@ -165,11 +166,11 @@
 			\foreach [count=\j] \x/\y in {#1}{
 				\def\i{0.8*\j}
 				\def\width{0.5}
-				\fill[fill = maingray, opacity= 0.4 ] (0,\i) rectangle (6,\i+\width);
+				\fill[fill = sidecolor, opacity= 0.4 ] (0,\i) rectangle (6,\i+\width);
 				%\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+\width);
 				%\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
-				\fill[fill=nugreen](0,\i) rectangle (\y,\i+\width);
-				\node [below right] at (0,\i+\width) {\x};
+				\fill[fill=lightgray](0,\i) rectangle (\y,\i+\width);
+				\node [below right] at (0,\i+\width) {\color{white}\x};
 			}
 		\end{tikzpicture}
 	}
@@ -179,6 +180,7 @@
 % Adjusts the size of the wheel:
 \def\innerradius{1.0cm}
 \def\outerradius{2.2cm}
+
 
 % The main macro
 \newcommand{\wheelchart}[1]{
@@ -196,10 +198,11 @@
       \pgfmathsetmacro{\midradius}{(\outerradius+\innerradius)/2}
 
       % Rotate so we start from the top
-      \begin{scope}[rotate=90]
+      \begin{scope}[rotate=120]
 
       % Loop through each value set. \cumnum keeps track of where we are in the wheel
       \pgfmathsetmacro{\cumnum}{0}
+      \pgfmathsetmacro{\indx}{0}
       \foreach \value/\colour/\name in {#1} {
             \pgfmathsetmacro{\newcumnum}{\cumnum + \value/\totalnum*360}
 
@@ -215,11 +218,12 @@
             \pgfmathsetmacro\labelshiftdir{1-2*(-\midangle>180)}
 
             % Draw the color segments. Somehow, the \midrow units got lost, so we add 'pt' at the end. Not nice...
+            %\fill[\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
             \fill[\colour] (-\cumnum:\outerradius) arc (-\cumnum:-(\newcumnum):\outerradius) --
             (-\newcumnum:\innerradius) arc (-\newcumnum:-(\cumnum):\innerradius) -- cycle;
 
             % Draw the data labels
-            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 0.25ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 0.25ex) [xshift=\labelshiftdir*0.15cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
+            \draw  [*-,thin] node [append after command={(\midangle:\midradius pt) -- (\midangle:\outerradius + 1ex) -- (\tikzlastnode)}] at (\midangle:\outerradius + 1ex) [xshift=\labelshiftdir*0.2cm,inner sep=0pt, outer sep=0pt, ,anchor=\textanchor]{\name};
 
 
             % Set the old cumulated angle to the new value
@@ -247,7 +251,7 @@
     %------------------------------------------------
     
         \vspace{4mm}
-    {\Huge\color{pblue}\cvname}
+    {\Huge\color{black}\cvname}
 
     %------------------------------------------------
     
@@ -329,7 +333,7 @@
 
 \def\@sectioncolor#1#2#3{%
 	{%
-		\color{pblue} #1#2#3%
+		\color{headercolor} #1#2#3%
 	}%
 }
 
@@ -365,13 +369,24 @@
 	\end{tabular*}
 }
 
-\newcommand{\twentyitem}[5]{%
-	#1&\parbox[t]{0.83\textwidth}{%
+\newcommand{\twentyitem}[6]{%
+	\parbox[t]{0.17\textwidth}{#1}
+  \parbox[t]{0.83\textwidth}{%
 		\textbf{#2}% 
 		\hfill%
 		{\footnotesize#3}\\%
-        \ifblank{#4}{}{#4 \\}
-		#5\vspace{\parsep}%
+        \ifblank{#4}{}{#4 \\}}\\
+
+  \parbox[t]{0.17\textwidth}{
+  \renewcommand{\labelitemi}{}
+  \ifblank{#5}{\hfill}{
+  \vspace{-4mm}
+  \begin{itemize}\setlength{\itemindent}{-2mm}#5\end{itemize}
+  \vspace{\parsep}}}
+
+  \parbox[t]{0.83\textwidth}{
+            \vspace{-4mm}
+		#6\vspace{\parsep}%
 	}\\
 }
 
