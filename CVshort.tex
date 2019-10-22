@@ -1,0 +1,179 @@
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+\usepackage{pst-node}   
+\usepackage{wordcloud}
+\usepackage{datapie}
+
+\newcommand\venn{
+\begin{pspicture}(-3,-2.2)(3,2.2)
+%\begin{pspicture}(-3,-2)(3,1.8)
+%main labels
+  \def\R{1}
+  \def\RR{2}
+  \def\Rup{2.55}
+  \def\Rdn{1.4}
+  \pnode(\R;30){A} \rput(\RR;30){ {Quant}}
+  \pnode(\R;150){B}\rput(\Rup;150){Data} \rput(\RR;150){Scientist}
+  \pnode(\R;270){C}\rput(\RR;270){Developer}
+
+
+%circles
+
+  \psset{opacity=0.3}
+  \def\r{2}
+  \pscircle*[linecolor=gray](A){\r} 
+  \pscircle*[linecolor=gray](B){\r} 
+  \pscircle*[linecolor=gray](C){\r}
+
+%intersections
+  \def\d{1.5}
+  \renewcommand{\arraystretch}{0.4}
+	\rput(\d;90){\begin{tabular}[t]{@{}c@{}}\scriptsize Interactive \\ \scriptsize Visualizations\end{tabular}} %{$A \cap B$}
+ 	\rput(\d;210){\begin{tabular}[t]{@{}l@{}}\scriptsize Machine \\ \scriptsize \enskip Learning\end{tabular}}	%{$B \cap C$}
+	\rput(\d;-30){\begin{tabular}[t]{@{}l@{}}\scriptsize \enskip Numerical \\ \scriptsize Methods \end{tabular}}	%{$A \cap C$}  
+	\rput(0,0){\begin{tabular}[t]{@{}c@{}}\scriptsize Distributed \\ \scriptsize Computing\end{tabular}}	%{$A\cap B\cap C$}
+
+\end{pspicture}
+}
+
+
+%Languages
+%\wheelchart{50/nugreen/Python,  5/materialpurple/HTML5, 5/materialindigo/CSS, 10/materialorange/Java, 10/materialamber/JavaScript, 2.5/purple/Fran\c{c}ais, 2.5/nured/Espa\~nol, 10/nublue/SQL,15/yellow/C++}
+
+\wheelchart{50/darkgray/Python,  5/lightgray/HTML5, 5/gray/CSS, 10/darkgray/JavaScript, 10/lightgray/Scala, 2.5/gray/Fran\c{c}ais, 2.5/darkgray/Espa\~nol, 10/lightgray/SQL,20/gray/C++}
+
+%Interests
+\interests{{Machine Learning/5},{Quantitative Modelling/5.5},{Visualisation/4},{Big Data/4}}
+
+\newcommand\wordcloud{\wordclouding{8pt}{15pt}{Statistical Statistical Analysis Statistical Analysis Analysis  Business Acumen Spark MLLib Spark MLLib Hadoop API API API Teaching Agile Agile Agile Jupyter Jupyter Jupyter Jupyter Monte Carlo Monte Carlo ReactJS ReactJS ReactJS Pandas Pandas Pandas Pandas Multinomial Tree Multinomial Tree Prototype Prototype Prototype Stochastic Calculus ChatBots ChatBots Capital Markets Capital Markets Predictive Models Dash Dash Dash Dash Plotly Plotly}}
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%-----------------------------------s-----------------------------------------------------
+
+\cvname{Lucas Durand} % Your name
+\cvjobtitle{ Data Science Tooling Lead } % Job title/career
+
+\cvlinkedin{https://linkedin.com/in/lucasdurand}
+\cvnumberphone{+1 416 884 1123} % Phone number
+%\cvsite{} % Personal website
+\cvsite{lucasdurand.xyz} % Personal website
+\cvmail{lucas@lucasdurand.xyz} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makeprofile % Print the sidebar
+
+\newcommand{\skill}[1]{\texttt{\textbf{#1}}}
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+
+	\twentyitem
+		{Feb 2018 - \\ Present}
+		{Data Science Tooling Lead}
+		{\href{https://www.tdsecurities.com}{TD Securities}}
+		{DeepGreen Data \& Analytics}
+		{\item\skill{Python}
+		\item
+		\item\skill{JupyterHub}
+		\item\skill{Tableau}
+		\item
+		\item\skill{Scala, Spark}
+		\item\skill{Flask, Dash}
+		}
+		{
+			\begin{itemize}
+				\item Toronto Team Lead: manage group of developers and data scientists
+				\item Python subject-matter expert for wider group
+				\item Develop and maintain suite of data science tools
+				\item Grow user base to 200+ users in one year
+				\item Development of ML analytics engine
+				\item Model and dashboard deployment pipelines
+				\item \textbf{Data Science Projects:}
+				\begin{itemize}
+					\item Project Financing - gain insights from day-on-day changes to forecasts vs actuals
+					\item Market Data Visualization - tool to track data integrity and correlate changes with news events
+					\item Release Regression Testing - drill into PnL diffs caused by curve, model and population changes between environments
+					\item Trade Surveillance - NLP entity mapping to flag trader conversations
+				\end{itemize}
+				\item \textbf{Courses Completed:}
+				\begin{itemize}
+					\item Fitch Learning - Equities 102
+					\item Fitch Learning - Derivatives 102
+					\item Fitch Learning - Fixed Income 102
+				\end{itemize}
+			\end{itemize}
+		}	
+		
+	\twentyitem
+    	{Jul 2016 - \\ Feb 2018}
+        {Quant Developer Associate}
+        {\href{https://www.tdsecurities.com}{TD Securities}}
+        {Quantitative Modelling \& Analytics Group \\
+        Treasury Analytics Group}
+        {
+        \item\skill{C++}
+        \item\skill{Java}
+        \item
+        \item\skill{React.js}
+        \item\skill{Node.js}
+        \item\skill{Boost}
+        \item\skill{Jenkins}
+		\item\skill{MLLib}
+		\item\skill{Keras}
+		}
+        {\begin{itemize}
+        \item Responsible for development and implementation of sophisticated derivatives pricing and risk models, exposing functionality to Excel and Java interfaces
+        \item Implement infrastructure to expose library to Python, integrate with build
+        \item Leverage data visualization tools to deliver interactive mortgage-backed security (MBS) valuation module to business leaders
+        \item Benchmark and stability testing of quasi-Monte Carlo method allows for Key Rate Vega and Convexity hedging   
+		\item \textbf{Data Science Projects:}
+		\begin{itemize}
+        	\item Led Machine Learning group learning course. Cover key Data Science technniques with ongoing projects
+       		\item Winner of TD Bank's Hackathon with development of novel model to predict customer life moments
+        	\item Develop network of Chatbots, providing easy access to a variety of useful data and algorithms
+		\end{itemize}
+	    \item \textbf{Courses Completed}:
+        \begin{itemize}
+        	\item Coursera (Columbia University) - Financial Engineering and Risk Management Part I
+        	\item Udemy - Data Science and Machine Learning with Python
+        \end{itemize}
+    \end{itemize}	
+    	}
+        
+\end{twenty}
+
+%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%% EDUCATION %%%%%%%%%%%%%%%%%%%%%%5
+
+\section{Education}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+    	{2014 - 2016}
+        {MSc., Theoretical Physics}
+        {\href{http://www.yorku.ca/}{York University, Perimeter Institute (PI)}}
+        {Toronto/Waterloo, Ontario, Canada}
+        {}
+        {Major Research Project: \emph{inSIDious Matter} with \href{http://www.yorku.ca/stulin/research.html}{Tulin Research Group}}
+	\twentyitem
+    	{2009 - 2014}
+        {BSc., Physics \& Philosophy}
+        {\href{https://www.utoronto.ca/}{Trinity College, University of Toronto}}
+        {Toronto, Ontario, Canada}
+        {}
+        {Senior Thesis -- Graphene: Hartree-Fock Analytics and Numerics}
+	%\twentyitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
+\end{twenty}
+
+
+\end{document} 
