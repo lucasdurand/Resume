@@ -1,2 +1,2 @@
 # Resume
-This is out of use now in favour of lucasdurand.xyz
+This is out of use now in favour of [lucasdurand.xyz](lucasdurand.xyz)
